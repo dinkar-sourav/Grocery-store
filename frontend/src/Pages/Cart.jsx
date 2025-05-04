@@ -67,6 +67,7 @@ const Cart = () => {
           })
           if(data.success){
              window.location.replace(data.url);
+             setCartItems({});
           }else {
             toast.error(data.message);
           }
