@@ -12,7 +12,7 @@ const Login = () => {
   const formHandler = async (event) => {
     try {
       event.preventDefault();
-      const {data} = await axios.post(`http://localhost:300/api/user/${state}`, {name,email,password});
+      const {data} = await axios.post(`/api/user/${state}`, {name,email,password});
 
       if (data.success){
         navigate('/');

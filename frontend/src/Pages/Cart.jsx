@@ -25,7 +25,7 @@ const Cart = () => {
 
   const getUserAddress = async ()=>{
     try {
-      const {data} = await axios.get('http://localhost:300/api/address/get');
+      const {data} = await axios.get('/api/address/get');
 
       if(data.success) {
         setAddress(data.addresses);
@@ -48,7 +48,7 @@ const Cart = () => {
 
         // place order with cod
         if(payment === 'COD'){
-          const {data} = await axios.post('http://localhost:300/api/order/cod' , {
+          const {data} = await axios.post('/api/order/cod' , {
             items : cartArray.map(item=> ({product :item._id , quantity :item.quantity})),
             address :selectedAddress._id
           })
@@ -61,7 +61,7 @@ const Cart = () => {
             toast.error(data.message);
           }
         } else{
-          const {data} = await axios.post('http://localhost:300/api/order/stripe' , {
+          const {data} = await axios.post('/api/order/stripe' , {
             items : cartArray.map(item=> ({product :item._id , quantity :item.quantity})),
             address :selectedAddress._id
           })
