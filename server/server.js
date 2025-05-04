@@ -16,7 +16,7 @@ dotenv.config();
 const app=express();
 const Port = process.env.PORT || 4000;
 
-const allowedOrigins = ['https://grocery-store-backend-2hpc.onrender.com','http://localhost:5173', 'https://grocery-store-frontend-nine.vercel.app']
+const allowedOrigins = ['https://grocery-store-frontend-nine.vercel.app','http://localhost:5173', 'https://grocery-store-frontend-nine.vercel.app']
 // middleware
 app.use(express.json());
 app.use(cookieParser());
